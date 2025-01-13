@@ -4,14 +4,10 @@ phases:
     runtime-versions:
       python: 3.12
     commands:
-      - echo "Installing dependenciess..."
+      - echo "Installing dependencies..."
   build:
     commands:
       - echo "Zipping deployment package..."
-      - mkdir lib
-      - cd lib
-      - zip -r9 ../deployment_package.zip .
-      - cd ..
       - zip -g deployment_package.zip lambda_function.py
   post_build:
     commands:
